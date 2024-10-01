@@ -1,11 +1,12 @@
+import { TBlogs } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import { AiFillLike } from "react-icons/ai";
 import { FaCalendar } from "react-icons/fa";
 
-const LatestBlogCard = ({ blog }) => {
+const LatestBlogCard = ({ blog }:{blog:TBlogs}) => {
   return (
-    <div key={blog.id} className="card w-full bg-base-100 shadow-xl">
+    <div key={blog.id} className="card bg-base-100 shadow-xl">
       <figure>
         <Image
           src={blog.blog_image}
@@ -43,7 +44,7 @@ const LatestBlogCard = ({ blog }) => {
           </div>
 
           <div className="flex items-center">
-            <AiFillLike className="text-accent text-xl" /> {blog.total_likes}{" "}
+            <AiFillLike className="text-accent text-xl" /> {blog.total_likes}
             Likes
           </div>
         </div>
