@@ -1,6 +1,7 @@
 import BlogCard from "@/components/ui/BlogCard";
 import LatestBlogCard from "@/components/ui/LatestBlogCard";
 import { TBlogs } from "@/types";
+import Link from "next/link";
 
 
 const LatestBlogs = ({blogs}:{blogs:TBlogs[]}) => {
@@ -21,7 +22,10 @@ const LatestBlogs = ({blogs}:{blogs:TBlogs[]}) => {
     blogs?.slice(2,5).map((blog)=><BlogCard key={blog.id} blog={blog}></BlogCard>)
 }
              </div>
+             <div className="text-center my-3">
+             <Link href='/blogs' ><button className="btn btn-accent ">see all</button></Link>
             
+             </div>
         </div>
     );
 };
